@@ -1,3 +1,5 @@
+import math
+
 def print_arry(arr):
     for x in range(len(arr)): 
         print(arr[x], end="")
@@ -14,7 +16,10 @@ def extract_max(arr, d):
     heapify(arr,0,d)
     return max
 
-# 
+# add comments
+# arr = arr
+# i = the zomet to heapift from
+# d is d
 def heapify(arr,i,d):
     bigger = i
     for k in range(0 , d-1):
@@ -27,20 +32,33 @@ def heapify(arr,i,d):
         arr[i] = arr[k]
         heapify(arr,k,d)
 
+# k value to add
+def insert(arr,k,d):
+    arr.append(k)
+    # to complete
+
+def increase_key(arr,i,k,d):
+    arr[i] = max(arr[i],k)
+    if arr[i] == k:
+        while i > 1 and arr[i/d] < arr[i]:
+            arr[i] = arr[i/d]
+            i = i/d
 
 def main():
     print("python main function")
     a = [10, 1, 2, 3, 6, 8, 7, 9] 
     #a = [8,1,2,3,6] 
     print_arry(a)
-    
+    '''
     for k in range(0,len(a)):
         print("")
         extract_max(a,3)
         print_arry(a)
-                
-
-
+    '''
+    increase_key(a,6,11,3)          
+    print("")
+    print_arry(a)
+    print("")
 
 
 
